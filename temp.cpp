@@ -10,7 +10,7 @@
 #include "warn.h"
 
 #define PIN_BUS     4
-#define RESOLUTION  9
+#define RESOLUTION  12
 
 static wchan    temp_setup      (void);
 static wchan    temp_run        (wchan why);
@@ -71,11 +71,12 @@ temp_run (wchan why)
 
     for (i = 0; i < temp_ntemp; i++) {
         t = temp_drv.getTempC(temp_addrs[i]);
+        Serial.println(t);
         warnf(WLOG, "Temperature reading: sensor [%u], temp [%f]", i, t);
 
         temp_last_reading[i] = t;
     }
 
     swi(SWI_TEMP);
-    return TASK_TIME(why, 5000);
+    return TASK_TIME(why, 2000);
 }

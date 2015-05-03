@@ -15,12 +15,12 @@
 #include "warn.h"
 
 task *all_tasks[] = {
-    &gps_task,
+    //&gps_task,
     //&cam_task,
 #ifdef NTX_DEBUG
-    &ntx_task,
+    //&ntx_task,
 #endif
-    &rtty_task, 
+    //&rtty_task, 
     //&sd_task,
     &temp_task,
     NULL

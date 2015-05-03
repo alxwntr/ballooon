@@ -47,7 +47,7 @@ fakegps_setup (void)
     gps_last_fix.fix_type   = 4;
     
     gps_last_fix.itow       = 0xdeadbeef;
-    gps_last_fix.when       = millis();
+    gps_last_fix.when       = 0;
 
     return TASK_DELAY(5000);
 }

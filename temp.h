@@ -7,7 +7,7 @@
 
 #include "task.h"
 
-#define NTEMP       3
+#define NTEMP       1
 
 extern task     temp_task;
 
